@@ -53,6 +53,8 @@ RSpec.describe 'mergesort.rb' do
 
     it "should handle single element arrays" do
       expect(mergesort([2])).to eq([2])
+	  expect(mergesort(['!'])).to eq(['!'])
+	  expect(mergesort(['ruby'])).to eq(['ruby'])
     end
 
     it "should not alter an already sorted array" do
@@ -60,11 +62,30 @@ RSpec.describe 'mergesort.rb' do
       expect(mergesort(array)).to eq([-2, 0, 1, 8, 12, 19, 101, 149.4])
     end
 	
-	 it "should not alter an already sorted array" do
-      array = [aa, b]
-      expect(mergesort(array)).to eq([aa, b])
+ it "should sorted empty array" do
+      expect( mergesort([]) ).to eq([])
     end
 
+	it "should sort string correctly sorted array" do
+      expect(mergesort(['aabbaab', 'rspec', 'ruby', 'alternate'])).to match_array(['aabbaab', 'alternate', 'rspec', 'ruby'])
+    end
+	
+	 it 'sortowanie napisow intow i floatow' do
+      arr = ['ruby', '2.999', '1', 'rspec']
+      expect(mergesort(arr)).to match_array(['1', '2.999', 'rspec', 'ruby'])
+    end
+	
+	it 'sortowanie znakow specjalnych napisow i liczb' do
+      arr = ['#', '!!^', 'ruby', '(*', '12', '1', '1,12']
+      expect(mergesort(arr)).to match_array(["!!^", "#", "(*", "1", "1,12", "12", "ruby"])
+    end
+	
+	it 'sortowanie dla spacji' do
+      arr = ['#', ' ']
+      expect(mergesort(arr)).to match_array([" ", "#"])
+    end
 
+	
+	
   end
 end
