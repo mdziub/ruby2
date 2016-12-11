@@ -21,12 +21,12 @@ RSpec.describe 'mergesort.rb' do
       expect(mergesort(array)).to start_with(7)
     end
 
-    it 'poprawnosc sortowania dla nieujemnych' do
+    it 'poprawnosc sortowania dla calkowitych nieujemnych' do
       array = [7, 49, 12, 14, 0, 19, 91]
       expect(mergesort(array)).to eq([0, 7, 12, 14, 19, 49, 91])
     end
 
-    it 'poprawnosc sortowanie dla niedodatnich' do
+    it 'poprawnosc sortowanie dla calkowitych niedodatnich' do
       array = [-7, -49, -12, -14, 0, -19, -91]
       expect(mergesort(array)).to eq([-91, -49, -19, -14, -12, -7, 0])
     end
@@ -36,12 +36,12 @@ RSpec.describe 'mergesort.rb' do
       expect(mergesort(array)).to eq([-19, -12, -7, 0, 14, 49, 91])
     end
 
-    it 'poprawnosc sortowania calkowitych nieujemnych' do
+    it 'poprawnosc sortowania wymiernych nieujemnych' do
       array = [1.2, 3.7, 5.1, 7.9, 2.1]
       expect(mergesort(array)).to eq([1.2, 2.1, 3.7, 5.1, 7.9])
     end
 
-    it 'poprawnosc sortowania calkowitych niedodatnuch' do
+    it 'poprawnosc sortowania wymiernych niedodatnuch' do
       array = [-1.2, -3.7, -5.1, -7.9, -2.1]
       expect(mergesort(array)).to eq([-7.9, -5.1, -3.7, -2.1, -1.2])
     end
