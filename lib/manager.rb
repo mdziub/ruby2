@@ -1,15 +1,4 @@
 ﻿# Manager class
-require 'date'
-class Date
-  def self.parsable?(string)
-    begin
-      parse(string)
-      true
-    rescue ArgumentError
-      false
-    end
-  end
-end
 class Manager
   class << self; attr_accessor :gra end
   @@gra = []
