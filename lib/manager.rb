@@ -66,8 +66,5 @@ class Manager
 def czydata?(obj)
     obj.to_s.match(/\d{2}-\d{2}-\d{4}/).nil? ? true : false
   end
-
-
-
-
+  
 end
