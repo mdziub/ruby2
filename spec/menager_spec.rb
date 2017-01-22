@@ -13,7 +13,7 @@ RSpec.describe 'manager.rb' do
   end
 
   it 'should edit gra' do
-    expect { obj.update_muzyka(1, 'Nowa2', 'Hive2', '145', '16', 'Przygoda', '11-10-2017') ') } .not_to raise_error
+    expect { obj.update_muzyka(1, 'Nowa2', 'Hive2', '145', '16', 'Przygoda', '11-10-2017') } .not_to raise_error
   end
 
   it 'should delete game' do
